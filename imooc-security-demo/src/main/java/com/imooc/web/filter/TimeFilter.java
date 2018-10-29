@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.imooc.web.filter;
 
 import java.io.IOException;
@@ -13,40 +10,38 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-/**
- * @author zhailiang
- *
- */
-//@Component
+import org.springframework.stereotype.Component;
+
+
+
 public class TimeFilter implements Filter {
 
-	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#destroy()
-	 */
 	@Override
 	public void destroy() {
-		System.out.println("time filter destroy");
+		// TODO Auto-generated method stub
+
 	}
 
-	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
-	 */
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		System.out.println("time filter start");
-		long start = new Date().getTime();
-		chain.doFilter(request, response);
-		System.out.println("time filter 耗时:"+ (new Date().getTime() - start));
-		System.out.println("time filter finish");
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain filterChain) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		System.out.println("filter start");
+			long start=new Date().getTime();
+			filterChain.doFilter(request, response);
+			System.out.println("time filter 耗时:"+(new Date().getTime()-start));
+			System.out.println("time filter finish");
+			
 	}
 
-	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
-	 */
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		System.out.println("time filter init");
+		// TODO Auto-generated method stub
+			System.out.println("timeFileter init");
 	}
+
+
+
+
 
 }

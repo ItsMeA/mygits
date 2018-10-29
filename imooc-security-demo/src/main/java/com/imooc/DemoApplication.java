@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.imooc;
 
 import org.springframework.boot.SpringApplication;
@@ -10,25 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * @author zhailiang
- *
- */
+
 @SpringBootApplication
 @RestController
 @EnableSwagger2
 public class DemoApplication {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		SpringApplication.run(DemoApplication.class, args);
 	}
-	
 	@GetMapping("/hello")
-	public String hello() {
-		return "hello spring security";
+	public String hello(){
+		return "spring hello world";
 	}
 
 }
+
